@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    font-family: 'Raleway', sans-serif;
+}
+
+img {
+    width: 333px;
+    height: 247px;
+}
+
+.content {
+    font-size: 123%;
+}
+
+#para-spacing {
+    padding-top: 3em;
+    padding-bottom: 3em;
+}
+
+#overview-subtitle, #content-subtitle {
+    font-size: 2.3em;
+    font-weight: 600;
+}
+
+#overview-subtitle {
+    text-align: center;
+}
+
+.nav_bar {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #B4C5E4;
+    z-index: 1;
+}
+
+.nav_bar li {
+    float: left;
+}
+
+.nav_bar li a {
+    display: block;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 24px 20px;
+    text-decoration: none;
+    font-size: 110%;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown:hover {
+    background-color: #FFFFFF;
+}
+
+.dropdown:hover a {
+    color: #B4C5E4;
+}
+
+.header {
+    text-align: center;
+    padding: 8em;
+}
+
+.covertext {
+    align-content: center;
+    position: absolute;
+    vertical-align: middle;
+    margin-left: 4%;
+}
+
+#title {
+    padding-top: 35%;
+    font-size: 4em;
+    font-weight: bolder;
+    color: white;
+}
+
+#title2 {
+    padding-top: 50%;
+    font-size: 4em;
+    font-weight: bolder;
+    color: white;
+}
+
+
+#titledesc {
+    font-size: 2em;
+    font-weight: normal;
+    color: white;
+    text-align: left;
+}
+
+.cover {
+    margin-top: 2em;
+    height: 35em;
+    position: relative;
+}
+
+.cover img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.page-summary .content {
+    text-align: center;
+}
