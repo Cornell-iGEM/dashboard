@@ -1,6 +1,7 @@
-var express = require('express')
+var express = require('express');
  
-var app = express()
+var app = express();
+var path = require('path');
  
 app.get('/data/:tray', function(req, res) {
     var data = {
@@ -14,8 +15,10 @@ app.get('/data/:tray', function(req, res) {
     res.json(response)
 });
 
+app.use(express.static('public'))
+
 app.get('/*', function(req, res){
-    res.send("Some oxyponics thing...Cornell iGEM 2017??");
+    res.sendFile(path.join(__dirname+'/../client/index.html'));
 });
 
 app.listen(5000)
