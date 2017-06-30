@@ -14,7 +14,7 @@ app.get('/data/:tray', function(req, res) {
     res.json(response)
 });
 
-app.get('/', function(req, res){
+app.get('/*', function(req, res){
     res.send("Some oxyponics thing...Cornell iGEM 2017??");
 });
 
