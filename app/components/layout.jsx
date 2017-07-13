@@ -14,14 +14,17 @@ export default class Layout extends React.Component {
                         <li>
                             <Link to="/history">History</Link>
                         </li>
+                        <li>
+                            <Link to="/login">Login</Link>
+                        </li>
                     </ul>
                     <hr/>
                     <div className="container-fluid">
-                        <LoginPage/>
+                        <Route exact path="/" component={Home}/>
+                        <Route path="/history" component={History}/>
+                        <Route path="/login" component={LoginPage}/>
                     </div>
                     <footer></footer>
-                    <Route exact path="/" component={Home}/>
-                    <Route path="/history" component={History}/>
                 </div>
             </Router>
         )
