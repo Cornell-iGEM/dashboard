@@ -16,7 +16,8 @@ module.exports = {
                 include: path.join(__dirname, 'app'),
                 exclude: [/node_modules/, path.resolve(__dirname, 'app/index.js'),],
                 query: {
-                    presets: ['es2015', 'react']
+                    presets: ['es2015', 'react'],
+                    plugins: ['transform-class-properties']
                 }
             }
         ]

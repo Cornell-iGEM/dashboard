@@ -1,6 +1,8 @@
 import React from 'react';
 import LoginPage from './loginpage.jsx';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import Auth from '../Auth/Auth.js';
+const auth0 = new Auth();
 
 export default class Layout extends React.Component {
     render() {
@@ -22,7 +24,7 @@ export default class Layout extends React.Component {
                     <div className="container-fluid">
                         <Route exact path="/" component={Home}/>
                         <Route path="/history" component={History}/>
-                        <Route path="/login" component={LoginPage}/>
+                        <Route path="/login" component={LoginPage} auth="auth0"/>
                     </div>
                     <footer></footer>
                 </div>
