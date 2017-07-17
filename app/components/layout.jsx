@@ -25,6 +25,10 @@ export default class Layout extends React.Component {
                         <Route exact path="/" component={Home}/>
                         <Route path="/history" component={History}/>
                         <Route path="/login" component={LoginPage} auth="auth0"/>
+                        <Route path="/callback" render={(props) => {
+                            handleAuthentication(props);
+                            return <Callback {...props} />
+                        }}/>
                     </div>
                     <footer></footer>
                 </div>
@@ -43,4 +47,16 @@ const History = () => (
     <div>
         <h2>Four score and seven years ago...</h2>
     </div>
+);
+
+const handleAuthentication = (nextState, replace) => {
+    if(/access_token|id_token|error/.test(nextState.location.hash)){
+        auth0.handleAuthentication();
+    }
+};
+
+
+
+const Callback = () => (
+    <div>Loading...</div>
 );

@@ -19,6 +19,7 @@ export default class Auth {
     }
 
     handleAuthentication() {
+        console.log("hanlding authentication in auth now");
         this.auth0.parseHash((err, authResult) => {
             if (authResult && authResult.accessToken && authResult.idToken) {
                 this.setSession(authResult);
