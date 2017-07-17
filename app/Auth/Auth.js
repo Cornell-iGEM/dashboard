@@ -8,6 +8,7 @@ export default class Auth {
         this.logout = this.logout.bind(this);
         this.handleAuthentication = this.handleAuthentication.bind(this);
         this.isAuthenticated = this.isAuthenticated.bind(this);
+        this.getProfile = this.getProfile.bind(this);
 
         this.auth0 = new auth0.WebAuth({
             domain: 'citronnade.auth0.com',
@@ -15,7 +16,7 @@ export default class Auth {
             redirectUri: 'http://localhost:5000/callback',
             audience: 'https://citronnade.auth0.com/userinfo',
             responseType: 'token id_token',
-            scope: 'openid'
+            scope: 'openid profile'
         });
     }
 
@@ -57,5 +58,20 @@ export default class Auth {
         // access token's expiry time
         let expiresAt = JSON.parse(localStorage.getItem('expires_at'));
         return new Date().getTime() < expiresAt;
+    }
+
+    getAccessToken(){
+        return localStorage.getItem('access_token');
+    }
+
+    userProfile;
+    getProfile(cb){
+        let accessToken = this.getAccessToken();
+        this.auth0.client.userInfo(accessToken, (err, profile) => {
+            if(profile){
+                this.userProfile = profile;
+            }
+            cb(err, profile);
+        })
     }
 }

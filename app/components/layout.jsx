@@ -1,7 +1,7 @@
 import React from 'react';
 import LoginPage from './loginpage.jsx';
+import Profile from './profile.jsx';
 import {BrowserRouter as Router, Route, Link, Redirect} from 'react-router-dom';
-import {withRouter} from 'react-router';
 import Auth from '../Auth/Auth.js';
 const auth0 = new Auth();
 import history from '../history.js';
@@ -28,9 +28,14 @@ export default class Layout extends React.Component {
                     </ul>
                     <hr/>
                     <div className="container-fluid">
+                        <div>
+                            <Profile auth={auth0}>
+
+                            </Profile>
+                        </div>
                         <Route exact path="/" component={Home}/>
                         <Route path="/history" component={History}/>
-                        <Route path="/login" component={LoginPage} auth="auth0"/>
+                        <Route path="/login" component={LoginPage} auth={auth0}/>
                         <Route path="/callback" render={(props) => (
                             handleAuthentication(props) ? (
                                 <Redirect to="/home"/>
@@ -72,3 +77,4 @@ const handleAuthentication = (nextState, replace) => {
 const Callback = ({history}) => (
     <div>Loading...</div>
 );
+
