@@ -1,5 +1,6 @@
 import auth0 from 'auth0-js';
 import history from '../history.js';
+import { browserHistory } from 'react-router-dom';
 
 export default class Auth {
     constructor() {
@@ -23,9 +24,10 @@ export default class Auth {
         this.auth0.parseHash((err, authResult) => {
             if (authResult && authResult.accessToken && authResult.idToken) {
                 this.setSession(authResult);
-                history.replace('/home');
+                //history.replace('/home');
+
             } else if (err) {
-                history.replace('/home');
+                //history.replace('/home');
                 console.log(err);
             }
         });
