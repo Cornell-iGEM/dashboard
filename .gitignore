@@ -58,7 +58,7 @@ typings/
 .env
 
 # IntelliJ files
-.idea/workspace.xml
+.idea/*
 
 # Bundle
 app/assets/bundle.js

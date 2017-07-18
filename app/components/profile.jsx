@@ -15,14 +15,21 @@ export default class Profile extends Component {
     }
     render() {
         const { profile } = this.state;
-        return (
-            <div className="profile-area">
-                <h1>{profile.name}</h1>
-                <div>
-                    <h3>{profile.nickname}</h3>
+        console.log("profile:", profile);
+        if(profile) {
+            return (
+                <div className="profile-area">
+                    <h1>{profile.name}</h1>
+                    <div>
+                        <h3>{profile.nickname}</h3>
+                    </div>
+                    <pre>{JSON.stringify(profile, null, 2)}</pre>
                 </div>
-                <pre>{JSON.stringify(profile, null, 2)}</pre>
-            </div>
-        );
+
+            );
+        }
+        else{
+            return null;
+        }
     }
 }
