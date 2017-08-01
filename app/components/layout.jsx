@@ -5,6 +5,8 @@ import {BrowserRouter as Router, Route, Link, Redirect} from 'react-router-dom';
 import Auth from '../Auth/Auth.js';
 const auth0 = new Auth();
 import history from '../history.js';
+import NavBar from './navbar.jsx';
+import {Col} from 'react-bootstrap/lib/';
 
 export default class Layout extends React.Component {
     constructor(props){
@@ -15,7 +17,7 @@ export default class Layout extends React.Component {
         return (
             <Router history={history}>
                 <div className="page-wrapper">
-                    <ul className = "nav nav-pills nav-stacked">
+                    {/* <ul className = "nav nav-pills nav-stacked">
                         <li>
                             <Link to="/">Home</Link>
                         </li>
@@ -25,9 +27,15 @@ export default class Layout extends React.Component {
                         <li>
                             <Link to="/login">Login</Link>
                         </li>
-                    </ul>
+                    </ul> */}
+                    {/* <NavBar navItems={[
+                      {name: "Home", href: "/"},
+                      {name: "History", href: "/history"},
+                      {name: "Login", href: "/login"}
+                    ]} /> */}
+                    <NavBar className="navbar"/>
                     <hr/>
-                    <div className="container-fluid">
+                    <Col className="container-fluid" md={9}>
                         <div>
                             <Profile auth={auth0}>
 
@@ -43,7 +51,7 @@ export default class Layout extends React.Component {
                                 <Redirect to="/300"/>
                             )
                             )}/>
-                    </div>
+                    </Col>
                     <footer></footer>
                 </div>
             </Router>
@@ -77,4 +85,3 @@ const handleAuthentication = (nextState, replace) => {
 const Callback = ({history}) => (
     <div>Loading...</div>
 );
-
