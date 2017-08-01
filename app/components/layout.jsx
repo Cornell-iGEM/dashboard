@@ -28,11 +28,6 @@ export default class Layout extends React.Component {
                             <Link to="/login">Login</Link>
                         </li>
                     </ul> */}
-                    {/* <NavBar navItems={[
-                      {name: "Home", href: "/"},
-                      {name: "History", href: "/history"},
-                      {name: "Login", href: "/login"}
-                    ]} /> */}
                     <NavBar className="navbar"/>
                     <hr/>
                     <Col className="container-fluid" md={9}>
