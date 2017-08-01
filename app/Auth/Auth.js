@@ -67,11 +67,17 @@ export default class Auth {
     userProfile;
     getProfile(cb){
         let accessToken = this.getAccessToken();
-        this.auth0.client.userInfo(accessToken, (err, profile) => {
-            if(profile){
-                this.userProfile = profile;
-            }
-            cb(err, profile);
-        })
+        if(!!accessToken) {
+            console.log("valid token");
+            this.auth0.client.userInfo(accessToken, (err, profile) => {
+                if (profile) {
+                    this.userProfile = profile;
+                }
+                cb(err, profile);
+            })
+        }
+        else{
+            console.log("invalid token");
+        }
     }
 }
