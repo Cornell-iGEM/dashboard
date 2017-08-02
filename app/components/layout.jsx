@@ -26,7 +26,7 @@ export default class Layout extends React.Component {
 
                             </Profile>
                         </div>
-                        <Route exact path="/" component={Home}/>
+                        <Route exact path="/" component={Dashboard}/>
                         <Route path="/history" component={History}/>
                         <Route path="/login" component={LoginPage} auth={auth0}/>
                         <Route path="/callback" render={(props) => (
@@ -37,7 +37,7 @@ export default class Layout extends React.Component {
                             )
                             )}
                         />
-                        <div><Dashboard /></div>
+
                     </Col>
                     <footer></footer>
                 </div>
@@ -46,11 +46,14 @@ export default class Layout extends React.Component {
     }
 }
 
-const Home = () => (
-    <div>
-        <h2>Home</h2>
-    </div>
-);
+// const Home = () => (
+//     <div>
+//         {/* <h2>Home</h2> */}
+//         <div className="dashboard">
+//           <Dashboard />
+//         </div>
+//     </div>
+// );
 
 const History = () => (
     <div>
