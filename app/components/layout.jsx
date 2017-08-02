@@ -6,6 +6,7 @@ import Auth from '../Auth/Auth.js';
 const auth0 = new Auth();
 import history from '../history.js';
 import NavBar from './navbar.jsx';
+import Dashboard from './dashboard.jsx';
 import {Col} from 'react-bootstrap/lib/';
 
 export default class Layout extends React.Component {
@@ -17,18 +18,7 @@ export default class Layout extends React.Component {
         return (
             <Router history={history}>
                 <div className="page-wrapper">
-                    {/* <ul className = "nav nav-pills nav-stacked">
-                        <li>
-                            <Link to="/">Home</Link>
-                        </li>
-                        <li>
-                            <Link to="/history">History</Link>
-                        </li>
-                        <li>
-                            <Link to="/login">Login</Link>
-                        </li>
-                    </ul> */}
-                    <NavBar className="navbar"/>
+                    <NavBar />
                     <hr/>
                     <Col className="container-fluid" md={9}>
                         <div>
@@ -45,7 +35,9 @@ export default class Layout extends React.Component {
                             ) : (
                                 <Redirect to="/300"/>
                             )
-                            )}/>
+                            )}
+                        />
+                        <div><Dashboard /></div>
                     </Col>
                     <footer></footer>
                 </div>
