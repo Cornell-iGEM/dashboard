@@ -7,9 +7,9 @@ const NavBar = () => {
     <div className="navbar-area">
       <Col md={3}>
         <Nav bsStyle="pills" stacked md={3}>
-          <NavItem><Link to="/">Home</Link></NavItem>
-          <NavItem><Link to="/history">History</Link></NavItem>
-          <NavItem><Link to="/login">Login</Link></NavItem>
+          <NavItem className="nav-item"><Link to="/">Home</Link></NavItem>
+          <NavItem className="nav-item"><Link to="/history">History</Link></NavItem>
+          <NavItem className="nav-item"><Link to="/login">Login</Link></NavItem>
         </Nav>
       </Col>
     </div>
