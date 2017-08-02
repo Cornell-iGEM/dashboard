@@ -9,6 +9,8 @@ export default class EC extends React.Component {
     }
   }
 
+  //some function that updates ec and includes setState
+
   render() {
     return (
       <div className="EC-area">

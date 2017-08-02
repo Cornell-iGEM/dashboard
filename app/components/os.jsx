@@ -9,6 +9,8 @@ export default class OS extends React.Component {
     }
   }
 
+  //some function that updates os and includes setState
+
   render() {
     return (
       <div className="os-area">

@@ -9,6 +9,8 @@ export default class Temp extends React.Component {
     }
   }
 
+  //some function that updates temp and includes setState
+
   render() {
     return (
       <div className="temp-area">
