@@ -1,6 +1,5 @@
 import React from 'react';
 import Auth from '../Auth/Auth.js';
-import {Col, Form, FormGroup, FormControl, ControlLabel} from 'react-bootstrap/lib/';
 
 const auth = new Auth();
 
@@ -21,21 +20,15 @@ export default class LoginPage extends React.Component {
                     <span>{this.props.auth}</span>
                     <button onClick={this.login} type="button" name="submit" >hello </button>
                 </form> */}
-                <Form horizontal>
-                  <FormGroup controlId="login_username">
-                    <Col componentClass={ControlLabel} sm={2}>Username</Col>
-                    <Col sm={6}>
-                      <FormControl type="text" placeholder="Username" />
-                    </Col>
-                  </FormGroup>
+                <form>
+                  <div className="form-group">
+                    <input type="text" className="form-control" id="username" placeholder="Username"></input>
+                  </div>
 
-                  <FormGroup controlId="login_password">
-                    <Col componentClass={ControlLabel} sm={2}>Password</Col>
-                    <Col sm={6}>
-                      <FormControl type="password" placeholder="Password" />
-                    </Col>
-                  </FormGroup>
-                </Form>
+                  <div className="form-group">
+                    <input type="password" className="form-control" id="password" placeholder="Password"></input>
+                  </div>
+                </form>
             </div>
         )
     }

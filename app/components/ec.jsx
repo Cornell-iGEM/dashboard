@@ -1,5 +1,4 @@
 import React from 'react';
-import {Col} from 'react-bootstrap/lib/';
 
 export default class EC extends React.Component {
   constructor(props) {
@@ -13,11 +12,11 @@ export default class EC extends React.Component {
 
   render() {
     return (
-      <div className="EC-area">
-        <Col sm={8} offset={2}>
+      <div className="ec-area">
+        <div className="col-md-8 offset-md-2">
           <h2>EC</h2>
           <p>{this.state.ec}</p>
-        </Col>
+        </div>
       </div>
     )
   }
