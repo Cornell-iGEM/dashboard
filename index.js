@@ -4,19 +4,25 @@ var app = express();
 var path = require('path');
 app.use("/app", express.static(__dirname + '/app'));
 app.use("/node_modules", express.static(__dirname+'/node_modules'));
-
-app.get('/data/:tray', function(req, res) {
-    var data = {
-	name: "test tray 1",
-        pH: 7.4,
-        EC: 0.10,
-        ROS: -0.28,
-        temp: 24
-    };
-    
-    //NOT SAFE
-    var text = "Data for tray " + req.params["tray"];
-    var response = {text:text, data:data};
+//7.4 0.1 -0.28 24
+app.get('/data/:tray/pH', function(req, res) {
+    var data = 7.4 + (Math.random() - 0.5) * 2;
+    var response = {data};
+    res.json(response)
+});
+app.get('/data/:tray/ec', function(req, res) {
+    var data = 0.1 + (Math.random() - 0.5) * 0.05;
+    var response = {data};
+    res.json(response)
+});
+app.get('/data/:tray/os', function(req, res) {
+    var data = -0.28 + (Math.random() - 0.5) * 0.05;
+    var response = {data};
+    res.json(response)
+});
+app.get('/data/:tray/temp', function(req, res) {
+    var data = 24 + (Math.random() - 0.5);
+    var response = {data};
     res.json(response)
 });
 

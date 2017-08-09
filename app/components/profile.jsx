@@ -1,6 +1,6 @@
-import {Component} from 'react';
+import React from 'react';
 
-export default class Profile extends Component {
+export default class Profile extends React.Component {
     componentWillMount() {
         this.setState({ profile: {} });
         const { userProfile, getProfile } = this.props.auth;

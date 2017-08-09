@@ -1,54 +1,37 @@
 import React from 'react';
 var d3 = require('d3');
+//import 'isomorphic-fetch';
+import SensorGraph from './sensorGraph.jsx';
 
 export default class SensorComponent extends React.Component {
     constructor(props) {
         super(props);
-        console.log("in constructor");
-        console.log(this.props.x);
-        console.log(this.props);
-        this.state = {value: this.props.initial_value};
+        this.state = {value: [this.props.initial_value]};
+        this.value = [this.props.initial_value];
     };
+
     componentDidMount(){
+        //this.setState({value: [this.props.initial_value]});
+        let api_location = window.location.href + "data/1/" + this.props.name;
+        var self = this;
+        this.timerID = setInterval(
+            () =>  fetch(api_location)
+                .then((response) =>{
+                    response.json().then((data) => {
+                        this.value = [data.data];
+                        this.setState({value: [data.data]});
+                        console.log("data in parent:", data.data, new Date());
 
-        console.log("state:", this.state);
-        this.drawChart();
-        console.log("mounted component");
+                    });
+                }),
+            1000
+        );
     };
-    shouldComponentUpdate(){
-        return false;
+    componentWillUnmount(){
+        clearInterval(this.timerID);
     }
-    drawChart(){
-        //d3 code
-        var svg = d3.select('svg#' + this.props.name + "-chart").attr('width', 200).attr('height', 100);
-        var grad = svg.append('defs').append('linearGradient')
-            .attr('id', 'grad' + this.props.name)
-            .attr('x1', '0%').attr('x2', '100%')
-            .attr('y1', '0%').attr('y2', '0%');
-        grad.append('stop')
-            .attr('offset', '0%')
-            .attr('stop-color', 'red');
-        grad.append('stop')
-            .attr('offset', '50%')
-            .attr('stop-color', 'green');
-        grad.append('stop')
-            .attr('offset', '100%')
-            .attr('stop-color', 'yellow');
-        svg.append('rect')
-            .attr('width', 200)
-            .attr('height', 80)
-            .attr('y', 10)
-            .style('fill', 'url(#grad'+this.props.name+')');
 
-        var line = svg.append('line')
-            .attr('x1', this.props.x(this.state.value))
-            .attr('x2', this.props.x(this.state.value))
-            .attr('y1', 0)
-            .attr('y2', 100)
-            .style('stroke', 'black')
-            .style('stroke-width', 3);
 
-    }
 
     //some function that updates os and includes setState
 
@@ -56,9 +39,8 @@ export default class SensorComponent extends React.Component {
         return (
             <div className={this.props.name+"-area"}>
                 <div className="col-md-8 offset-md-2">
-                    <h2>{this.props.type}: {this.state.value} {this.props.unit}</h2>
-                    <svg id={this.props.name+"-chart"} ref={(elem) => { this.svg = elem; }}>
-                    </svg>
+                    <h2>{this.props.type}: {parseFloat(this.state.value).toFixed(2)} {this.props.unit}</h2>
+                    <SensorGraph {...this.props} value={this.value}/>
                 </div>
             </div>
         )
