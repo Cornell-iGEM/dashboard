@@ -5,13 +5,14 @@ body {
 }
 
 .page-wrapper {
-  height: 1024px;
+  height: 100%;
 }
 
 .col-md-3 {
   padding-left: 0;
   padding-right: 0;
   width: 20%;
+  position: fixed;
 }
 
 .nav_bar {
@@ -38,10 +39,16 @@ body {
   background-color: #656D78;
 }
 
+.col-md-9 {
+  position: relative;
+  height: auto;
+  width: 80%;
+  left: 20%;
+}
+
 .dashboard-area {
   background-color: #F5F7FA;
   height: 100%;
-  width: 80%;
 }
 
 .dashboard {

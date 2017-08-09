@@ -20,7 +20,7 @@ export default class SensorGraph extends React.Component{
     }
 
     updateChart(){
-        var svg = d3.select('svg#' + this.props.name + "-chart").attr('width', 200).attr('height', 100)
+        var svg = d3.select('svg#' + this.props.name + "-chart").attr('width', 300).attr('height', 30)
         var line = svg.selectAll('line')
             .data(this.props.value)
             .attr('x1', (d) => {
