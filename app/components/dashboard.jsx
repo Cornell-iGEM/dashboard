@@ -1,8 +1,8 @@
 import React from 'react';
-import PH from './ph.jsx';
-import EC from './ec.jsx';
-import OS from './os.jsx';
-import Temp from './temp.jsx';
+import PH from './dashboard/ph.jsx';
+import EC from './dashboard/ec.jsx';
+import OS from './dashboard/os.jsx';
+import Temp from './dashboard/temp.jsx';
 
 export default class Dashboard extends React.Component {
   constructor(props) {

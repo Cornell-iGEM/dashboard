@@ -8,7 +8,10 @@ app.use("/node_modules", express.static(__dirname+'/node_modules'));
 app.get('/data/:tray', function(req, res) {
     var data = {
 	name: "test tray 1",
-	intensities: [1, 2, 3, 4, 5 ]
+        pH: 7.4,
+        EC: 0.10,
+        ROS: -0.28,
+        temp: 24
     };
     
     //NOT SAFE
