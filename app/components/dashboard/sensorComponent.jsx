@@ -41,6 +41,10 @@ export default class SensorComponent extends React.Component {
                 <div className="col-md-8 offset-md-2">
                     <h2>{this.props.type}: {parseFloat(this.state.value).toFixed(2)} {this.props.unit}</h2>
                     <SensorGraph {...this.props} value={this.value}/>
+                  <h2 className="data-type">{this.props.type} </h2>
+                    <h2 className="data-value">{parseFloat(this.state.value).toFixed(2)} <span className="units">{this.props.unit}</span></h2>
+                    <svg id={this.props.name+"-chart"} ref={(elem) => { this.svg = elem; }}>
+                    </svg>
                 </div>
             </div>
         )

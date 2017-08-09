@@ -11,11 +11,11 @@ export default class Dashboard extends React.Component {
 
   render() {
     return (
-      <div className="dashboard-area">
-        <div className="col-md-6"><PH /></div>
-        <div className="col-md-6"><EC /></div>
-        <div className="col-md-6"><OS /></div>
-        <div className="col-md-6"><Temp /></div>
+      <div className="dashboard">
+        <div className="col-md-6 data ph-area"><PH /></div>
+        <div className="col-md-6 data ec-area"><EC /></div>
+        <div className="col-md-6 data os-area"><OS /></div>
+        <div className="col-md-6 data temp-area"><Temp /></div>
       </div>
     )
   }

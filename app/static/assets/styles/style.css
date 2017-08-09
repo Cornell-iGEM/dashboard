@@ -1,10 +1,37 @@
 body {
   padding: 0;
   margin: 0;
+  height: 100%;
+}
+
+.page-wrapper {
+  height: 768px;
+}
+
+.col-md-3 {
+  padding-left: 0;
+  padding-right: 0;
+  width: 20%;
+}
+
+.nav_bar {
+  background-color: #434A54;
+  height: 100%;
 }
 
 .nav {
-  background-color: #434A54;
+  padding: 0;
+  margin: 0;
+}
+
+.nav li a {
+  padding: 18px 25px;
+  color: #FFFFFF;
+  font-size: 18px;
+}
+
+.nav-pills li a {
+  border-radius: 0;
 }
 
 .nav-pills li:hover {
@@ -13,9 +40,40 @@ body {
 
 .dashboard-area {
   background-color: #F5F7FA;
+  height: 100%;
+  width: 80%;
 }
 
-.ph-area {
+.dashboard {
+  margin-left: 45px;
+}
+
+.data {
+  padding-bottom: 50px;
+  margin: 30px;
+  width: 40%;
+  background-color: #E6E9ED;
+}
+
+.ph-area, .os-area {
+  margin-right: 50px;
+}
+
+.data-type {
+  font-weight: 300;
+}
+
+.data-value {
+  font-size: 50px;
+  font-weight: 500;
+}
+
+.units {
+  font-size: 20px;
+  font-weight: 200;
+}
+
+/*.ph-area {
   background-color: #FC6E51;
 }
 
@@ -29,4 +87,4 @@ body {
 
 .temp-area {
   background-color: #4FC1E9;
-}
+}*/
