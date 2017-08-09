@@ -9,7 +9,7 @@ export default class OS extends React.Component {
 
         this.new_props = {
             type: "OS",
-            name: 'os',
+            name: "os",
             x: x_map,
             initial_value: -0.4,
             unit: "mV"

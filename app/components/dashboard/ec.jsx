@@ -9,7 +9,7 @@ export default class EC extends React.Component {
     super(props);
     this.new_props = {
       type: "EC",
-      name: 'ec',
+      name: "ec",
       x: x_map,
       initial_value:0.4,
       unit: "mV"

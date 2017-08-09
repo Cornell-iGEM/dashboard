@@ -11,7 +11,7 @@ export default class PH extends React.Component {
     super(props);
     this.new_props = {
         type: "pH",
-        name: 'pH',
+        name: "ph",
         x: x_map,
         initial_value:6.8,
         unit: ""

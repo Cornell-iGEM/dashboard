@@ -16,7 +16,7 @@ export default class Layout extends React.Component {
         return (
             <Router history={history}>
                 <div className="page-wrapper">
-                    <div className="col-md-3">
+                    <div className="col-md-3 nav_bar">
                       <ul className="nav nav-pills nav-stacked">
                         <li><Link to="/">Home</Link></li>
                         <li><Link to="/history">History</Link></li>
@@ -47,6 +47,15 @@ export default class Layout extends React.Component {
         )
     }
 }
+
+// const Home = () => (
+//     <div>
+//         {/* <h2>Home</h2> */}
+//         <div className="dashboard">
+//           <Dashboard />
+//         </div>
+//     </div>
+// );
 
 const History = () => (
     <div>

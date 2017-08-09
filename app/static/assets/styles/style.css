@@ -1,18 +1,41 @@
 body {
   padding: 0;
   margin: 0;
+  height: 100%;
+}
+
+.page-wrapper {
+  height: 768px;
+}
+
+.col-md-3 {
+  padding-left: 0;
+  padding-right: 0;
+  width: 20%;
+}
+
+.nav_bar {
+  background-color: #434A54;
+  height: 100%;
 }
 
 .nav {
-  background-color: #434A54;
+  padding: 0;
+  margin: 0;
+}
+
+.nav li a {
+  padding: 18px 25px;
+  color: #FFFFFF;
+  font-size: 18px;
+}
+
+.nav-pills li a {
+  border-radius: 0;
 }
 
 .nav-pills li:hover {
   background-color: #656D78;
-}
-
-.dashboard-area {
-  background-color: #F5F7FA;
 }
 
 .ph-area {
