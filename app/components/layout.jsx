@@ -39,9 +39,7 @@ export default class Layout extends React.Component {
                             ) : (
                                 <Redirect to="/300"/>
                             )
-                            )}
-                        />
-
+                        )}/>
                     </div>
                     <footer></footer>
                 </div>

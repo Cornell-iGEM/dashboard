@@ -7,6 +7,26 @@ body {
   background-color: #434A54;
 }
 
+.nav-pills li:hover {
+  background-color: #656D78;
+}
+
+.dashboard-area {
+  background-color: #F5F7FA;
+}
+
 .ph-area {
   background-color: #FC6E51;
+}
+
+.ec-area {
+  background-color: #FFCE54;
+}
+
+.os-area {
+  background-color: #A0D468;
+}
+
+.temp-area {
+  background-color: #4FC1E9;
 }
