@@ -20,7 +20,7 @@ export default class SensorComponent extends React.Component {
     }
     drawChart(){
         //d3 code
-        var svg = d3.select('svg#' + this.props.name + "-chart").attr('width', 200).attr('height', 100);
+        var svg = d3.select('svg#' + this.props.name + "-chart").attr('width', 300).attr('height', 30);
         var grad = svg.append('defs').append('linearGradient')
             .attr('id', 'grad' + this.props.name)
             .attr('x1', '0%').attr('x2', '100%')
@@ -56,7 +56,8 @@ export default class SensorComponent extends React.Component {
         return (
             <div className={this.props.name+"-area"}>
                 <div className="col-md-8 offset-md-2">
-                    <h2>{this.props.type}: {this.state.value} {this.props.unit}</h2>
+                  <h2 className="data-type">{this.props.type} </h2>
+                    <h2 className="data-value">{this.state.value} <span className="units">{this.props.unit}</span></h2>
                     <svg id={this.props.name+"-chart"} ref={(elem) => { this.svg = elem; }}>
                     </svg>
                 </div>

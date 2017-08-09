@@ -38,7 +38,42 @@ body {
   background-color: #656D78;
 }
 
-.ph-area {
+.dashboard-area {
+  background-color: #F5F7FA;
+  height: 100%;
+  width: 80%;
+}
+
+.dashboard {
+  margin-left: 45px;
+}
+
+.data {
+  padding-bottom: 50px;
+  margin: 30px;
+  width: 40%;
+  background-color: #E6E9ED;
+}
+
+.ph-area, .os-area {
+  margin-right: 50px;
+}
+
+.data-type {
+  font-weight: 300;
+}
+
+.data-value {
+  font-size: 50px;
+  font-weight: 500;
+}
+
+.units {
+  font-size: 20px;
+  font-weight: 200;
+}
+
+/*.ph-area {
   background-color: #FC6E51;
 }
 
@@ -52,4 +87,4 @@ body {
 
 .temp-area {
   background-color: #4FC1E9;
-}
+}*/
