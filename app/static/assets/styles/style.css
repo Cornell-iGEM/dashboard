@@ -6,6 +6,7 @@ body {
 
 .page-wrapper {
   height: 100%;
+  margin-top: -20px;
 }
 
 .col-md-3 {
@@ -44,6 +45,7 @@ body {
   height: auto;
   width: 80%;
   left: 20%;
+  margin-top: -20px;
 }
 
 .dashboard-area {
@@ -59,7 +61,8 @@ body {
   padding-bottom: 50px;
   margin: 30px;
   width: 40%;
-  background-color: #E6E9ED;
+  color: #FFFFFF;
+  /*background-color: #E6E9ED;*/
 }
 
 .ph-area, .os-area {
@@ -80,12 +83,12 @@ body {
   font-weight: 200;
 }
 
-/*.ph-area {
-  background-color: #FC6E51;
+.ph-area {
+  background-color: #EC7063;
 }
 
 .ec-area {
-  background-color: #FFCE54;
+  background-color: #F7DC6F;
 }
 
 .os-area {
@@ -94,4 +97,4 @@ body {
 
 .temp-area {
   background-color: #4FC1E9;
-}*/
+}

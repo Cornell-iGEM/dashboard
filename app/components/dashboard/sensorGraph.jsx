@@ -64,10 +64,10 @@ export default class SensorGraph extends React.Component{
             .attr('stop-color', 'red');
         grad.append('stop')
             .attr('offset', '50%')
-            .attr('stop-color', 'green');
+            .attr('stop-color', 'yellow');
         grad.append('stop')
             .attr('offset', '100%')
-            .attr('stop-color', 'yellow');
+            .attr('stop-color', 'green');
         svg.append('rect')
             .attr('width', 200)
             .attr('height', 80)
