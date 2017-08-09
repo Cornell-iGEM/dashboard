@@ -1,4 +1,5 @@
 import React from 'react';
+import SensorComponent from './sensorComponent.jsx';
 
 export default class Temp extends React.Component {
   constructor(props) {
@@ -11,13 +12,7 @@ export default class Temp extends React.Component {
   //some function that updates temp and includes setState
 
   render() {
-    return (
-      <div className="temp-area">
-        <div className="col-md-8 offset-md-2">
-          <h2>Temp</h2>
-          <p>{this.state.temp}</p>
-        </div>
-      </div>
-    )
+    return (<SensorComponent type="Temp"/>);
+
   }
 }

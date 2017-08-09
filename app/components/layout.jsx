@@ -48,15 +48,6 @@ export default class Layout extends React.Component {
     }
 }
 
-// const Home = () => (
-//     <div>
-//         {/* <h2>Home</h2> */}
-//         <div className="dashboard">
-//           <Dashboard />
-//         </div>
-//     </div>
-// );
-
 const History = () => (
     <div>
         <h2>Four score and seven years ago...</h2>
