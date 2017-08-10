@@ -1,5 +1,6 @@
 import React from 'react';
 var d3 = require('d3');
+import 'd3-transition';
 
 export default class SensorGraph extends React.Component{
     constructor(props){
@@ -15,7 +16,6 @@ export default class SensorGraph extends React.Component{
             () => console.log(this.props.value),
             1000
         );*/
-        console.log("props in didmount:", this.props);
         this.drawChart();
     }
 
@@ -23,25 +23,24 @@ export default class SensorGraph extends React.Component{
         var svg = d3.select('svg#' + this.props.name + "-chart").attr('width', 300).attr('height', 30)
         var line = svg.selectAll('line')
             .data(this.props.value)
+            .transition()
+            .duration(1000)
+            .ease(d3.easeElastic)
             .attr('x1', (d) => {
-                console.log("props in line:", this.props.value, new Date());
                 return this.props.x(d)})
             .attr('x2', (d) => { return this.props.x(d)})
             .attr('y1', 0)
             .attr('y2', 100)
             .style('stroke', 'black')
             .style('stroke-width', 3);
-        console.log(svg);
         svg.exit().remove();
     }
 
     componentWillReceiveProps(nextProps) {
         // You don't have to do this check first, but it can help prevent an unneeded render
         if (nextProps.value !== this.props.value) {
-            if(!!this.props.value) {
-                console.log("props in chart:", this.props.value, new Date());
+            if(!!nextProps.value) {
                 this.props = nextProps;
-                console.log("props in chart:", this.props.value, new Date());
                 this.updateChart();
             }
         }

@@ -1,6 +1,7 @@
 import React from 'react';
 import LoginPage from './loginpage.jsx';
 import Profile from './profile.jsx';
+import Stream from './stream.jsx';
 import {BrowserRouter as Router, Route, Link, Redirect} from 'react-router-dom';
 import Auth from '../Auth/Auth.js';
 const auth0 = new Auth();
@@ -20,7 +21,8 @@ export default class Layout extends React.Component {
                       <ul className="nav nav-pills nav-stacked">
                         <li><Link to="/">Home</Link></li>
                         <li><Link to="/history">History</Link></li>
-                        <li><Link to="/login">Login</Link></li>
+                          <li><Link to="/login">Login</Link></li>
+                          <li><Link to="/stream">Stream</Link></li>
                       </ul>
                     </div>
                     <hr/>
@@ -36,6 +38,7 @@ export default class Layout extends React.Component {
                         <Route exact path="/" component={Dashboard}/>
                         <Route path="/history" component={History}/>
                         <Route path="/login" component={LoginPage} auth={auth0}/>
+                        <Route path="/stream" component={Stream}/>
                         <Route path="/callback" render={(props) => (
                             handleAuthentication(props) ? (
                                 <Redirect to="/home"/>
