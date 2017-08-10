@@ -14,7 +14,8 @@ export default class PH extends React.Component {
         name: "ph",
         x: x_map,
         initial_value:6.8,
-        unit: ""
+        unit: "",
+        graph_type: this.props.graph_type
     };
   };
 

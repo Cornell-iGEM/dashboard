@@ -7,6 +7,7 @@ import Auth from '../Auth/Auth.js';
 const auth0 = new Auth();
 import history from '../history.js';
 import Dashboard from './dashboard.jsx';
+import Historical from './historical.jsx';
 
 export default class Layout extends React.Component {
     constructor(props){
@@ -36,7 +37,7 @@ export default class Layout extends React.Component {
                             </Profile>
                         </div>
                         <Route exact path="/" component={Dashboard}/>
-                        <Route path="/history" component={History}/>
+                        <Route path="/history" component={Historical}/>
                         <Route path="/login" component={LoginPage} auth={auth0}/>
                         <Route path="/stream" component={Stream}/>
                         <Route path="/callback" render={(props) => (
@@ -62,12 +63,6 @@ export default class Layout extends React.Component {
 //         </div>
 //     </div>
 // );
-
-const History = () => (
-    <div>
-        <h2>Four score and seven years ago...</h2>
-    </div>
-);
 
 const handleAuthentication = (nextState, replace) => {
     if(/access_token|id_token|error/.test(nextState.location.hash)){

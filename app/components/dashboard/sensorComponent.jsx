@@ -15,7 +15,7 @@ export default class SensorComponent extends React.Component {
         //this.setState({value: [this.props.initial_value]});
         let api_location = window.location.origin + "/data/1/" + this.props.name;
         var self = this;
-        if (this.props.type == "pH") {
+        if (this.props.graph_type == "line") {
             fetch(api_location + '/historical').then(
                 (response) => {
                     response.json().then(
@@ -28,19 +28,23 @@ export default class SensorComponent extends React.Component {
                 }
             );
         }
-        this.timerID = setInterval(
-            () =>  fetch(api_location)
-                .then((response) =>{
-                    response.json().then((data) => {
-                        this.value = [data.data];
-                        this.setState({value: [data.data]});
-                    });
-                }),
-            1000
-        );
+        else {
+
+            this.timerID = setInterval(
+                () => fetch(api_location)
+                    .then((response) => {
+                        response.json().then((data) => {
+                            this.value = [data.data];
+                            this.setState({value: [data.data]});
+                        });
+                    }),
+                1000
+            );
+        }
     };
     componentWillUnmount(){
-        clearInterval(this.timerID);
+        if(this.props.graph_type !="line")
+            clearInterval(this.timerID);
     }
 
 
@@ -48,18 +52,20 @@ export default class SensorComponent extends React.Component {
     //some function that updates os and includes setState
 
     render() {
-        let historical = null;
-        if(this.props.type == "pH")
-            historical = <SensorHistorical {...this.props} historical={this.historical}/>;
-        return (
-            <div className={this.props.name+"-area"}>
+        let body = null;
+        if(this.props.graph_type == "line")
+            body = <SensorHistorical {...this.props} historical={this.historical}/>;
+        else
+            body = (<div className={this.props.name+"-area"}>
                 <div className="col-md-8 offset-md-2">
                     <h2 className="data-type">{this.props.type} </h2>
                     <h2 className="data-value">{parseFloat(this.state.value).toFixed(2)} <span className="units">{this.props.unit}</span></h2>
                     <SensorGraph {...this.props} value={this.value}/>
-                    {historical}
+
                 </div>
-            </div>
+            </div>);
+        return (
+            body
         )
     }
 }
