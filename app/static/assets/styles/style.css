@@ -129,13 +129,13 @@ body {
   background-color: #4FC1E9;
 }
 
-/*.login-area {
-  height: 400px;
-}*/
+.login-logo-area {
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
 
 .login-logo {
-  margin: 20px;
-  margin-left: 25%;
+  margin: 0 auto;
   width: 448px;
   height: 107.1px;
 }
@@ -144,7 +144,7 @@ body {
   display: block;
   margin: 0 auto;
   margin-top: 20px;
-  margin-bottom: 50px;
+  margin-bottom: 200px;
   width: 200px;
   height: 50px;
   font-size: 18px;
