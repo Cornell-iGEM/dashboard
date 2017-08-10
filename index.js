@@ -1,10 +1,32 @@
 var express = require('express');
- 
+var multer = require('multer');
+
+var storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, __dirname + '/public/uploads')
+    },
+    filename: function (req, file, cb) {
+        cb(null, 'image.jpg');
+    }
+})
+
+var upload = multer({ storage: storage })
+
 var app = express();
 var path = require('path');
 app.use("/app", express.static(__dirname + '/app'));
 app.use("/node_modules", express.static(__dirname+'/node_modules'));
+app.use("/image", function(req, res){
+    res.sendFile(path.resolve('./public/uploads/image.jpg'));
+})
 //7.4 0.1 -0.28 24
+app.post('/upload', upload.any(), function(req, res, next){
+    console.log(req.body, 'Body');
+    console.log(req.files, 'files');
+    res.end();
+})
+
+
 app.get('/data/:tray/pH', function(req, res) {
     var data = 7.4 + (Math.random() - 0.5) * 2;
     var response = {data};
