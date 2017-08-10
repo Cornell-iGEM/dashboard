@@ -130,13 +130,22 @@ body {
   background-color: #4FC1E9;
 }
 
-.login {
-  height: 100%;
+/*.login-area {
+  height: 400px;
+}*/
+
+.login-logo {
+  margin: 20px;
+  margin-left: 25%;
+  width: 448px;
+  height: 107.1px;
 }
 
 .btn {
   display: block;
   margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 50px;
   width: 200px;
   height: 50px;
   font-size: 18px;

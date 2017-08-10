@@ -14,21 +14,13 @@ export default class LoginPage extends React.Component {
 
     render() {
         return (
-            <div className="login">
+            <div className="login-area">
+              <img src="/app/static/assets/images/logo.png" className="login-logo"></img>
               <button onClick={this.login} type="button" name="submit" className="btn">Login</button>
                 {/* <form className="login_area">
                     <input type="text" name="login_info"/><br/>
                     <span>{this.props.auth}</span>
                     <button onClick={this.login} type="button" name="submit" className="btn">Login</button>
-                </form> */}
-                {/* <form>
-                  <div className="form-group">
-                    <input type="text" className="form-control" id="username" placeholder="Username"></input>
-                  </div>
-
-                  <div className="form-group">
-                    <input type="password" className="form-control" id="password" placeholder="Password"></input>
-                  </div>
                 </form> */}
             </div>
         )
