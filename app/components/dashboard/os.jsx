@@ -12,7 +12,8 @@ export default class OS extends React.Component {
             name: "os",
             x: x_map,
             initial_value: -0.4,
-            unit: "mV"
+            unit: "mV",
+            graph_type: this.props.graph_type
         };
     };
 

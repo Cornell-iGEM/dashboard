@@ -1,5 +1,8 @@
 import React from 'react'
 import PH from './dashboard/ph.jsx'
+import EC from './dashboard/ec.jsx';
+import OS from './dashboard/os.jsx';
+import Temp from './dashboard/temp.jsx';
 var d3 = require('d3');
 //import 'isomorphic-fetch';
 
@@ -49,9 +52,12 @@ export default class Historical extends React.Component {
 
     render() {
         return (
-            <div>
-                <PH graph_type="line"/>
-            </div>
+          <div>
+            <div className="col-md-8 offset-md-2 graph"><PH graph_type="line"/></div>
+            <div className="col-md-8 offset-md-2 graph"><EC graph_type="line"/></div>
+            <div className="col-md-8 offset-md-2 graph"><OS graph_type="line"/></div>
+            <div className="col-md-8 offset-md-2 graph"><Temp graph_type="line"/></div>
+          </div>
         )
     }
 }

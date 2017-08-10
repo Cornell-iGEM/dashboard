@@ -26,12 +26,12 @@ export default class SensorHistorical extends React.Component{
     }
     drawChart(){
         var data = this.props.historical;
-        var svg = d3.select('svg#' + this.props.name + '-line-chart').attr('width', 200).attr('height', 200);
+        var svg = d3.select('svg#' + this.props.name + '-line-chart').attr('width', 500).attr('height', 250);
         var valueline = d3.line()
             .x((d)=> {return x(d.time)})
             .y((d)=> {return y(d.data)});
-        var x = d3.scaleLinear().range([0,200]);
-        var y = d3.scaleLinear().range([200,0]);
+        var x = d3.scaleLinear().range([0,500]);
+        var y = d3.scaleLinear().range([250,0]);
         svg.append('g').attr('transform', "translate(0," + 180 + ")");
         data.forEach((d) => {
             console.log(d)

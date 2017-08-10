@@ -54,14 +54,18 @@ export default class SensorComponent extends React.Component {
     render() {
         let body = null;
         if(this.props.graph_type == "line")
-            body = <SensorHistorical {...this.props} historical={this.historical}/>;
+            body = (<div className={this.props.name+"-area"}>
+                <div className="col-md-8 offset-md-2">
+                    <h2 className="graph-type">{this.props.type} </h2>
+                    <SensorHistorical {...this.props} historical={this.historical}/>
+                </div>
+            </div>);
         else
             body = (<div className={this.props.name+"-area"}>
                 <div className="col-md-8 offset-md-2">
                     <h2 className="data-type">{this.props.type} </h2>
                     <h2 className="data-value">{parseFloat(this.state.value).toFixed(2)} <span className="units">{this.props.unit}</span></h2>
                     <SensorGraph {...this.props} value={this.value}/>
-
                 </div>
             </div>);
         return (

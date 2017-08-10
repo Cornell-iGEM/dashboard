@@ -12,7 +12,8 @@ export default class EC extends React.Component {
       name: "ec",
       x: x_map,
       initial_value:0.4,
-      unit: "mV"
+      unit: "mV",
+      graph_type: this.props.graph_type
     };
   };
 

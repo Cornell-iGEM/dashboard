@@ -48,9 +48,10 @@ app.get('/data/:tray/pH', function(req, res) {
     var response = {data};
     res.json(response)
 });
+
 app.get('/data/:tray/pH/historical', function(req, res) {
-    var times = [7,8,9,10,11,12,13,14,15,16,17];
-    var data = [7, 7.1, 7.3, 7.25, 8.5, 6.83, 6.7, 7.1, 7.2, 7, 6.86];
+    var times = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+    var data = [7, 7.1, 7.3, 7.25, 8.5, 6.83, 6.7, 7.1, 7.2, 7, 6.86, 7, 7.1, 7.3, 7.25, 8.5, 6.83, 6.7, 7.1, 7.2];
     var response = [];
     for(var i = 0; i < times.length; i++){
         response.push({
@@ -60,19 +61,61 @@ app.get('/data/:tray/pH/historical', function(req, res) {
     }
     res.json(response)
 });
+
 app.get('/data/:tray/ec', function(req, res) {
     var data = 0.1 + (Math.random() - 0.5) * 0.05;
     var response = {data};
     res.json(response)
 });
+
+app.get('/data/:tray/ec/historical', function(req, res) {
+    var times = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+    var data = [0.08, 0.11, 0.12, 0.09, 0.07, 0.10, 0.08, 0.12, 0.07, 0.09, 0.11, 0.08, 0.11, 0.12, 0.09, 0.07, 0.10, 0.08, 0.12, 0.07];
+    var response = [];
+    for(var i = 0; i < times.length; i++){
+        response.push({
+            time: times[i],
+            data: data[i]
+        })
+    }
+    res.json(response)
+});
+
 app.get('/data/:tray/os', function(req, res) {
     var data = -0.28 + (Math.random() - 0.5) * 0.05;
     var response = {data};
     res.json(response)
 });
+
+app.get('/data/:tray/os/historical', function(req, res) {
+    var times = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+    var data = [0.26, 0.30, 0.29, 0.27, 0.31, 0.25, 0.26, 0.28, 0.26, 0.30, 0.29, 0.26, 0.30, 0.29, 0.27, 0.31, 0.25, 0.26, 0.28, 0.26];
+    var response = [];
+    for(var i = 0; i < times.length; i++){
+        response.push({
+            time: times[i],
+            data: data[i]
+        })
+    }
+    res.json(response)
+});
+
 app.get('/data/:tray/temp', function(req, res) {
     var data = 24 + (Math.random() - 0.5);
     var response = {data};
+    res.json(response)
+});
+
+app.get('/data/:tray/temp/historical', function(req, res) {
+    var times = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+    var data = [24.22, 23.29, 25.0, 24.24, 23.89, 25.21, 24.0, 23.9, 23.72, 23.6, 24.1, 24.22, 23.29, 25.0, 24.24, 23.89, 25.21, 24.0, 23.9, 23.72];
+    var response = [];
+    for(var i = 0; i < times.length; i++){
+        response.push({
+            time: times[i],
+            data: data[i]
+        })
+    }
     res.json(response)
 });
 

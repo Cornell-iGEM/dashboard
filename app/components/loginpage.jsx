@@ -15,11 +15,12 @@ export default class LoginPage extends React.Component {
     render() {
         return (
             <div className="login">
-                <form className="login_box">
+              <button onClick={this.login} type="button" name="submit" className="btn">Login</button>
+                {/* <form className="login_area">
                     <input type="text" name="login_info"/><br/>
                     <span>{this.props.auth}</span>
-                    <button onClick={this.login} type="button" name="submit">Login</button>
-                </form>
+                    <button onClick={this.login} type="button" name="submit" className="btn">Login</button>
+                </form> */}
                 {/* <form>
                   <div className="form-group">
                     <input type="text" className="form-control" id="username" placeholder="Username"></input>

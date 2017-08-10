@@ -12,7 +12,8 @@ export default class Temp extends React.Component {
             name: "temp",
             x: x_map,
             initial_value: 25,
-            unit: "°C"
+            unit: "°C",
+            graph_type: this.props.graph_type
         };
     };
 
