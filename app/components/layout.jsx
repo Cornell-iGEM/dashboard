@@ -26,6 +26,9 @@ export default class Layout extends React.Component {
                       </ul>
                     </div>
                     <hr/>
+                    <div className="col-md-9 logo-area">
+                      <img src="/app/static/assets/images/logo.png" className="logo"></img>
+                    </div>
                     <div className="col-md-9 dashboard-area">
                         <div>
                             <Profile auth={auth0}>
