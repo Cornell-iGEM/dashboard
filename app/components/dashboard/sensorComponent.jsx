@@ -13,7 +13,7 @@ export default class SensorComponent extends React.Component {
 
     componentDidMount() {
         //this.setState({value: [this.props.initial_value]});
-        let api_location = window.location.href + "data/1/" + this.props.name;
+        let api_location = window.location.origin + "/data/1/" + this.props.name;
         var self = this;
         if (this.props.type == "pH") {
             fetch(api_location + '/historical').then(

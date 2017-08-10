@@ -1,5 +1,7 @@
 var express = require('express');
 var multer = require('multer');
+var bodyParser = require('body-parser');
+var CircularBuffer = require('circular-buffer');
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -13,6 +15,8 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage })
 
 var app = express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded());
 var path = require('path');
 app.use("/app", express.static(__dirname + '/app'));
 app.use("/node_modules", express.static(__dirname+'/node_modules'));
@@ -26,6 +30,17 @@ app.post('/upload', upload.any(), function(req, res, next){
     res.end();
 })
 
+var buf = new CircularBuffer(1);
+app.post('/brightness', function(req, res, next){
+    console.log(req.body.brightness)
+    buf.enq(req.body.brightness);
+})
+
+app.get('/data/:tray/brightness', function(req, res){
+    var data = buf.get(0);
+    var response = {data};
+    res.json(response);
+})
 
 app.get('/data/:tray/pH', function(req, res) {
     var data = 7.4 + (Math.random() - 0.5) * 2;
