@@ -62,3 +62,6 @@ typings/
 
 # Bundle
 app/assets/bundle.js
+
+# Public static files
+public/
