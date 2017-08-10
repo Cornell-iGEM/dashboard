@@ -13,7 +13,8 @@ export default class Auth {
         this.auth0 = new auth0.WebAuth({
             domain: 'citronnade.auth0.com',
             clientID: 'u89UeRx7_ERZX324ARiUr0Lw_kap9DoZ',
-            redirectUri: window.location.origin + '/callback',//http://localhost:5000/callback',
+            //redirectUri: window.location.origin + '/callback',//http://localhost:5000/callback',
+            redirectUri: "http://citronnade.mooo.com/callback",
             audience: 'https://citronnade.auth0.com/userinfo',
             responseType: 'token id_token',
             scope: 'openid profile'
