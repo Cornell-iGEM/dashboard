@@ -1,0 +1,39 @@
+@media screen and (max-width: 480px) {
+
+  .nav_bar {
+    width: 19%;
+    height: 100%;
+    margin-right: 0;
+  }
+
+  .nav li a {
+    font-size: 15px;
+  }
+
+  .col-md-9 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .profile-name {
+    font-size: 30px;
+  }
+
+  .dashboard-area {
+    width: 82%;
+    height: 100%;
+  }
+
+  .dashboard {
+    margin-left: 0;
+  }
+
+  .data {
+    margin: 0;
+    width: 100%;
+  }
+
+  .ph-area, .os-area {
+    margin-right: 0;
+  }
+}

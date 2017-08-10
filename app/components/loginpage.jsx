@@ -18,7 +18,7 @@ export default class LoginPage extends React.Component {
                 <form className="login_box">
                     <input type="text" name="login_info"/><br/>
                     <span>{this.props.auth}</span>
-                    <button onClick={this.login} type="button" name="submit" >hello </button>
+                    <button onClick={this.login} type="button" name="submit">Login</button>
                 </form>
                 {/* <form>
                   <div className="form-group">
