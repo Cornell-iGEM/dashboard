@@ -21,9 +21,9 @@ export default class Layout extends React.Component {
                     <div className="col-md-3 nav_bar">
                       <ul className="nav nav-pills nav-stacked">
                         <li><Link to="/">Home</Link></li>
-                        <li><Link to="/history">History</Link></li>
-                        <li><Link to="/stream">Stream</Link></li>
-                        <li><Link to="/login">Login</Link></li>
+                        <li><Link to="/graphs">Graphs</Link></li>
+                          <li><Link to="/login">Login</Link></li>
+                          <li><Link to="/stream">Stream</Link></li>
                       </ul>
                     </div>
                     <hr/>
@@ -37,9 +37,9 @@ export default class Layout extends React.Component {
                             </Profile>
                         </div>
                         <Route exact path="/" component={Dashboard}/>
-                        <Route path="/history" component={Historical}/>
-                        <Route path="/stream" component={Stream}/>
+                        <Route path="/graphs" component={Historical}/>
                         <Route path="/login" component={LoginPage} auth={auth0}/>
+                        <Route path="/stream" component={Stream}/>
                         <Route path="/callback" render={(props) => (
                             handleAuthentication(props) ? (
                                 <Redirect to="/home"/>
@@ -54,6 +54,7 @@ export default class Layout extends React.Component {
         )
     }
 }
+
 
 const handleAuthentication = (nextState, replace) => {
     if(/access_token|id_token|error/.test(nextState.location.hash)){

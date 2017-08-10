@@ -1,4 +1,5 @@
 import React from 'react';
+import Img from 'react-image';
 
 export default class Profile extends React.Component {
     componentWillMount() {
@@ -19,11 +20,9 @@ export default class Profile extends React.Component {
         if(profile) {
             return (
                 <div className="profile-area">
-                    <h1 className="profile-name">{profile.name}</h1>
-                    <div>
-                        <h3 className="profile-nickname">{profile.nickname}</h3>
-                    </div>
-                    <pre>{JSON.stringify(profile, null, 2)}</pre>
+                    <h1 className="profile-name">Hi, {profile.given_name}!
+                    <img width="100px" height="100px" className="img-circle pull-right" src={profile.picture}/>
+                    </h1>
                 </div>
 
             );
