@@ -34,6 +34,7 @@ var buf = new CircularBuffer(1);
 app.post('/brightness', function(req, res, next){
     console.log(req.body.brightness)
     buf.enq(req.body.brightness);
+    res.end();
 })
 
 app.get('/data/:tray/brightness', function(req, res){
