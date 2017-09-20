@@ -15,8 +15,9 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage })
 
 var app = express();
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
+
 var path = require('path');
 app.use("/app", express.static(__dirname + '/app'));
 app.use("/node_modules", express.static(__dirname+'/node_modules'));

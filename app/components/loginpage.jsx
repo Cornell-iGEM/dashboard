@@ -16,7 +16,7 @@ export default class LoginPage extends React.Component {
         return (
             <div className="login-area">
               <div className="login-logo-area text-center">
-                <img src="/app/static/assets/images/logo.png" className="login-logo"></img>
+                <img src="http://2017.igem.org/wiki/images/1/1d/CornellOxyponicsLogo.png" className="login-logo"></img>
               </div>
               <button onClick={this.login} type="button" name="submit" className="btn">Login</button>
                 {/* <form className="login_area">

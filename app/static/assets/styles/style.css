@@ -48,16 +48,6 @@ body {
   margin-top: -20px;
 }
 
-.logo-area {
-  width: 80%;
-}
-
-.logo {
-  height: 30.6px;
-  width: 128px;
-  float: right;
-}
-
 .profile-name {
   font-size: 35px;
   font-weight: 500;
@@ -69,10 +59,23 @@ body {
   font-weight: 400;
 }
 
+/*.logo-wrapper {
+  position: fixed;
+}
+
+.logo-area {
+  position: relative;
+  width: 80%;
+}
+
+.logo {
+  width: 100%;
+  float: right;
+}*/
+
 .dashboard-area {
   background-color: #F5F7FA;
   height: 100%;
-  margin-top: 8px;
 }
 
 .dashboard {
