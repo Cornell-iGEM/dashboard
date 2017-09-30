@@ -12,7 +12,18 @@ var storage = multer.diskStorage({
     }
 })
 
-var upload = multer({ storage: storage })
+var storage2 = multer.diskStorage({
+    destination: function(req, file, cb){
+        cb(null, __dirname + '/public/data_uploades');
+    },
+    filename: function(req, file, cb){
+        cb(null, req.file.filename);
+    }
+})
+
+
+var upload = multer({ storage: storage });
+var upload2 = multer({storage: storage2 });
 
 var app = express();
 app.use(bodyParser.json());
@@ -27,6 +38,10 @@ app.use("/image", function(req, res){
 app.post('/upload', upload.any(), function(req, res, next){
     console.log(req.body, 'Body');
     console.log(req.files, 'files');
+    res.end();
+})
+
+app.post('/upload_data', upload2.any(), function(req, res, next){
     res.end();
 })
 
