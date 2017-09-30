@@ -48,16 +48,6 @@ body {
   margin-top: -20px;
 }
 
-.logo-area {
-  width: 80%;
-}
-
-.logo {
-  height: 30.6px;
-  width: 128px;
-  float: right;
-}
-
 .profile-name {
   font-size: 35px;
   font-weight: 500;
@@ -69,10 +59,23 @@ body {
   font-weight: 400;
 }
 
+/*.logo-wrapper {
+  position: fixed;
+}
+
+.logo-area {
+  position: relative;
+  width: 80%;
+}
+
+.logo {
+  width: 100%;
+  float: right;
+}*/
+
 .dashboard-area {
   background-color: #F5F7FA;
   height: 100%;
-  margin-top: 8px;
 }
 
 .dashboard {
@@ -129,13 +132,13 @@ body {
   background-color: #4FC1E9;
 }
 
-/*.login-area {
-  height: 400px;
-}*/
+.login-logo-area {
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
 
 .login-logo {
-  margin: 20px;
-  margin-left: 25%;
+  margin: 0 auto;
   width: 448px;
   height: 107.1px;
 }
@@ -144,7 +147,7 @@ body {
   display: block;
   margin: 0 auto;
   margin-top: 20px;
-  margin-bottom: 50px;
+  margin-bottom: 200px;
   width: 200px;
   height: 50px;
   font-size: 18px;
