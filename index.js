@@ -3,6 +3,17 @@ var multer = require('multer');
 var bodyParser = require('body-parser');
 var CircularBuffer = require('circular-buffer');
 
+var MongoClient = require('mongodb').MongoClient
+var assert = require('assert')
+var url = 'mongodb://localhost:27020/igem'
+
+console.log('?');
+
+MongoClient.connect(url, function(err, db){
+    console.log('uh');
+    db.close();
+});
+
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, __dirname + '/public/uploads')
@@ -14,10 +25,11 @@ var storage = multer.diskStorage({
 
 var storage2 = multer.diskStorage({
     destination: function(req, file, cb){
-        cb(null, __dirname + '/public/data_uploades');
+        cb(null, __dirname + '/public/uploads');
     },
     filename: function(req, file, cb){
-        cb(null, req.file.filename);
+        //cb(null, req.file.filename);
+        cb(null, 'test_image.jpg');
     }
 })
 
