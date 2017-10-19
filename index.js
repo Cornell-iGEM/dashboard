@@ -42,7 +42,7 @@ app.post('/rfp', function(req, res, next){
     collection.insert({
         name : req.body.name,
         low_emission: req.body.low_emisson,
-        high_emission: req.body.high_emission
+        high_emission: req.body.high_emission,
         comments: req.body.comments
     });
     res.end();
