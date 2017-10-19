@@ -44,7 +44,10 @@ app.post('/rfp', function(req, res, next){
         low_emission: req.body.low_emisson,
         high_emission: req.body.high_emission,
         comments: req.body.comments
+    }, function(err, result){
+        console.log(result);
     });
+
     res.end();
 });
 
