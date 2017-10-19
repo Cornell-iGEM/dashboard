@@ -41,7 +41,7 @@ app.post('/rfp', function(req, res, next){
     let collection = req.db.collection('rfp-data');
     collection.insert({
         name : req.body.name,
-        low_emission: req.body.low_emisson,
+        low_emission: req.body.low_emission,
         high_emission: req.body.high_emission,
         comments: req.body.comments
     }, function(err, result){
