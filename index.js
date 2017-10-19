@@ -3,16 +3,11 @@ var multer = require('multer');
 var bodyParser = require('body-parser');
 var CircularBuffer = require('circular-buffer');
 
-var MongoClient = require('mongodb').MongoClient
+//var MongoClient = require('mongodb').MongoClient
 var assert = require('assert')
 var url = 'mongodb://localhost:27020/igem'
 
-console.log('?');
-
-MongoClient.connect(url, function(err, db){
-    console.log('uh');
-    db.close();
-});
+var expressMongoDb = require('express-mongo-db');
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -40,6 +35,18 @@ var upload2 = multer({storage: storage2 });
 var app = express();
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
+
+app.use(expressMongoDb(url));
+app.post('/rfp', function(req, res, next){
+    let collection = req.db.collection('rfp-data');
+    collection.insert({
+        name : req.body.name,
+        low_emission: req.body.low_emisson,
+        high_emission: req.body.high_emission
+        comments: req.body.comments
+    });
+    res.end();
+});
 
 var path = require('path');
 app.use("/app", express.static(__dirname + '/app'));
