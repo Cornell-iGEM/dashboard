@@ -63,10 +63,13 @@ app.post('/pdawn', function(req, res, next){
     res.end();
 });
 
-app.get('/pdawn', function(req, res){
-    let collection = req.db.collection('rfp-data');
-    collection.find({}, function(err, result){
-        res.json(result);
+app.get('/pdawn', function(req, res, next){
+    console.log("please why");
+    let collection = req.db.collection('pdawn-data');
+    collection.find({}, function(err, cursor){
+        console.log("why 2");
+        console.log(cursor.toArray());
+        res.json(cursor);
     })
 });
 
