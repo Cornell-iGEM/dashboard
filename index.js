@@ -50,6 +50,26 @@ app.post('/rfp', function(req, res, next){
 
     res.end();
 });
+app.post('/pdawn', function(req, res, next){
+    let collection = req.db.collection('pdawn-data');
+    collection.insert({
+        number: req.body.number,
+        time1: req.body.time1,
+        time2: req.body.time2
+    }, function(err, result){
+        console.log(result);
+    });
+
+    res.end();
+});
+
+app.get('/pdawn', function(req, res){
+    let collection = req.db.collection('rfp-data');
+    collection.find({}, function(err, result){
+        res.json(result);
+    })
+});
+
 
 var path = require('path');
 app.use("/app", express.static(__dirname + '/app'));
