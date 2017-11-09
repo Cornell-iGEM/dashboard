@@ -18,11 +18,13 @@ export default class Stream extends React.Component {
         clearInterval(this.timerID);
     }
 
+    //?timestamp allows
     render() {
         return (
             <div>
-                <Img src={"http://citronnade.mooo.com/image?" + this.state.time}/>
-                <Brightness/>
+                <Img src={"http://localhost:5000/image/image_raw.png?" + this.state.time}/>
+                <Img src={"http://localhost:5000/image/image_process.png?" + this.state.time}/>
+                     {/*<Brightness/>*/}
             </div>
         )
     }

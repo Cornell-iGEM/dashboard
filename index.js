@@ -14,7 +14,9 @@ var storage = multer.diskStorage({
         cb(null, __dirname + '/public/uploads')
     },
     filename: function (req, file, cb) {
-        cb(null, 'image.jpg');
+        //console.log(req.file);
+        //console.log(file.originalname);
+        cb(null, file.originalname);
     }
 })
 
@@ -75,13 +77,15 @@ app.get('/pdawn', function(req, res, next){
     })
 });
 
+console.log(__dirname + '/public/uploads');
+console.log(__dirname + '/app');
 
 var path = require('path');
 app.use("/app", express.static(__dirname + '/app'));
 app.use("/node_modules", express.static(__dirname+'/node_modules'));
-app.use("/image", function(req, res){
-    res.sendFile(path.resolve('./public/uploads/image.jpg'));
-})
+app.use("/image", express.static(__dirname + '/public/uploads'));//function(req, res){
+    //res.sendFile(path.resolve('./public/uploads/image.jpg'));
+//})
 //7.4 0.1 -0.28 24
 app.post('/upload', upload.any(), function(req, res, next){
     console.log(req.body, 'Body');
