@@ -22,8 +22,8 @@ export default class Stream extends React.Component {
     render() {
         return (
             <div>
-                <Img src={"http://localhost:5000/image/image_raw.png?" + this.state.time}/>
-                <Img src={"http://localhost:5000/image/image_process.png?" + this.state.time}/>
+                <Img src={"http://citronnade.mooo.com/image/image_raw.png?" + this.state.time}/>
+                <Img src={"http://citronnade.mooo.com/image/image_process.png?" + this.state.time}/>
                      {/*<Brightness/>*/}
             </div>
         )
