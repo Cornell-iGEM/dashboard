@@ -28,9 +28,9 @@ export default class Layout extends React.Component {
                     </div>
                     <hr/>
                     <div className="col-md-9 logo-area">
-                      {/* <div className="container-fluid col-md-3 logo-wrapper">
+                      {<div className="container-fluid col-md-3 logo-wrapper"><style>width: inherit</style>
                         <img src="http://2017.igem.org/wiki/images/1/1d/CornellOxyponicsLogo.png" className="logo"></img>
-                      </div> */}
+                      </div>}
                     </div>
                     <div className="col-md-9 dashboard-area">
                         <div>
